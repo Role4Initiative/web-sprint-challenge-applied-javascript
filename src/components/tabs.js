@@ -1,26 +1,32 @@
 import topics from '../mocks/data.js';
 console.log(topics);
 
+
 const Tabs = (topics) => {
   const topicsDiv = document.createElement('div');
-  const tabDiv1 = document.createElement('div');
-  const tabDiv2 = document.createElement('div');
-  const tabDiv3 = document.createElement('div');
+  // const tabDiv1 = document.createElement('div');
+  // const tabDiv2 = document.createElement('div');
+  // const tabDiv3 = document.createElement('div');
 
   topicsDiv.classList.add('topics');
-  tabDiv1.classList.add('tab');
-  tabDiv2.classList.add('tab');
-  tabDiv3.classList.add('tab');
+  // tabDiv1.classList.add('tab');
+  // tabDiv2.classList.add('tab');
+  // tabDiv3.classList.add('tab');
 
-  topics.forEach()
+  Array.from(topics).forEach(topic => {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = `${topic}`;
+    topicsDiv.appendChild(tab);
+  })
 
-  tabDiv1.textContent = 'javascript';
-  tabDiv2.textContent = 'bootstrap';
-  tabDiv3.textContent = 'technology';
+  // tabDiv1.textContent = `${topics}`;
+  // tabDiv2.textContent = `${topics}`;
+  // tabDiv3.textContent = `${topics}`;
 
-  topicsDiv.appendChild(tabDiv1);
-  topicsDiv.appendChild(tabDiv2);
-  topicsDiv.appendChild(tabDiv3);
+  // topicsDiv.appendChild(tabDiv1);
+  // topicsDiv.appendChild(tabDiv2);
+  // topicsDiv.appendChild(tabDiv3);
 
 
   return topicsDiv;
