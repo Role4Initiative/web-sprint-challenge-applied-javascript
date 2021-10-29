@@ -1,17 +1,12 @@
+import axios from 'axios';
 import topics from '../mocks/data.js';
 console.log(topics);
 
 
 const Tabs = (topics) => {
   const topicsDiv = document.createElement('div');
-  // const tabDiv1 = document.createElement('div');
-  // const tabDiv2 = document.createElement('div');
-  // const tabDiv3 = document.createElement('div');
 
   topicsDiv.classList.add('topics');
-  // tabDiv1.classList.add('tab');
-  // tabDiv2.classList.add('tab');
-  // tabDiv3.classList.add('tab');
 
   Array.from(topics).forEach(topic => {
     const tab = document.createElement('div');
@@ -19,15 +14,6 @@ const Tabs = (topics) => {
     tab.textContent = `${topic}`;
     topicsDiv.appendChild(tab);
   })
-
-  // tabDiv1.textContent = `${topics}`;
-  // tabDiv2.textContent = `${topics}`;
-  // tabDiv3.textContent = `${topics}`;
-
-  // topicsDiv.appendChild(tabDiv1);
-  // topicsDiv.appendChild(tabDiv2);
-  // topicsDiv.appendChild(tabDiv3);
-
 
   return topicsDiv;
 
@@ -48,6 +34,18 @@ const Tabs = (topics) => {
 }
 
 const tabsAppender = (selector) => {
+  const cssSelector2 = document.querySelector(selector);
+  axios.get('http://localhost:5000/api/topics')
+  .then(resp => {
+    for(let i = 0; i < resp.topics.length; i++) {
+     cssSelector2.appendChild(Tabs(topics[i]));
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  })
+
+
   // TASK 4
   // ---------------------
   // Implement this function which takes a css selector as its only argument.

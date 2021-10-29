@@ -2,6 +2,9 @@ import articles from '../mocks/data.js';
 console.log(articles);
 
 const Card = (article) => {
+  const cardDiv = document.querySelector('div');
+
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
