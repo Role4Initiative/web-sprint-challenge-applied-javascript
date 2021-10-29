@@ -1,4 +1,28 @@
+import topics from './mocks/data.js';
+console.log(topics);
+
 const Tabs = (topics) => {
+  const topicsDiv = document.createElement('div');
+  const tabDiv1 = document.createElement('div');
+  const tabDiv2 = document.createElement('div');
+  const tabDiv3 = document.createElement('div');
+
+  topicsDiv.classList.add('topics');
+  tabDiv1.classList.add('tab');
+  tabDiv2.classList.add('tab');
+  tabDiv3.classList.add('tab');
+
+  tabDiv1.textContent = '';
+  tabDiv2.textContent = '';
+  tabDiv3.textContent = '';
+
+  topicsDiv.appendChild(tabDiv1);
+  topicsDiv.appendChild(tabDiv2);
+  topicsDiv.appendChild(tabDiv3);
+
+
+  return topicsDiv;
+
   // TASK 3
   // ---------------------
   // Implement this function which takes an array of strings ("topics") as its only argument.
