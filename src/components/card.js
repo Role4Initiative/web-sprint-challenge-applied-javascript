@@ -1,3 +1,6 @@
+import articles from '../mocks/data.js';
+console.log(articles);
+
 const Card = (article) => {
   // TASK 5
   // ---------------------

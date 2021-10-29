@@ -1,4 +1,4 @@
-import topics from './mocks/data.js';
+import topics from '../mocks/data.js';
 console.log(topics);
 
 const Tabs = (topics) => {
@@ -12,9 +12,11 @@ const Tabs = (topics) => {
   tabDiv2.classList.add('tab');
   tabDiv3.classList.add('tab');
 
-  tabDiv1.textContent = '';
-  tabDiv2.textContent = '';
-  tabDiv3.textContent = '';
+  topics.forEach()
+
+  tabDiv1.textContent = 'javascript';
+  tabDiv2.textContent = 'bootstrap';
+  tabDiv3.textContent = 'technology';
 
   topicsDiv.appendChild(tabDiv1);
   topicsDiv.appendChild(tabDiv2);
